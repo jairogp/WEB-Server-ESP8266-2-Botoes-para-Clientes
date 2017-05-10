@@ -97,45 +97,44 @@
   buf += "<p><h3>TODOS CANAIS</h3></p> <a href=\"?function=DT_on\"><button>LIGA</button></a> <a href=\"?function=DT_off\"><button>DESLIGA</button></a></p>";
   buf += "<p><h3>PULSO</h3></p> <a href=\"?function=D4_on\"><button>PULSO</button></a></p>";
     
-  client.print(buf);
+    client.print(buf);
   delay(10);
 
   client.flush();
 
        if (req.indexOf("D0_on") != -1)
     {digitalWrite(D0, 1);}
-  else if (req.indexOf("D0_off") != -1)
+       if (req.indexOf("D0_off") != -1)
     {digitalWrite(D0, 0);}  
-  else if (req.indexOf("D1_on") != -1)
+       if (req.indexOf("D1_on") != -1)
     digitalWrite(D1, 1);
-  else if (req.indexOf("D1_off") != -1)
+       if (req.indexOf("D1_off") != -1)
     digitalWrite(D1, 0);
-  else if (req.indexOf("D2_on") != -1)
+       if (req.indexOf("D2_on") != -1)
     digitalWrite(D2, 1);
-  else if (req.indexOf("D2_off") != -1)
+       if (req.indexOf("D2_off") != -1)
     digitalWrite(D2, 0);
-  else if (req.indexOf("D3_on") != -1)
+       if (req.indexOf("D3_on") != -1)
     digitalWrite(D3, 1);
-  else if (req.indexOf("D3_off") != -1)
+       if (req.indexOf("D3_off") != -1)
     digitalWrite(D3, 0);
-  else if (req.indexOf("DT_on") != -1)
-    {digitalWrite(D0, 1);
+       if (req.indexOf("DT_on") != -1){
+    digitalWrite(D0, 1);
     digitalWrite(D1, 1);
     digitalWrite(D2, 1);
     digitalWrite(D3, 1);}
-  else if (req.indexOf("DT_off") != -1)
-    {digitalWrite(D0, 0);
+       if (req.indexOf("DT_off") != -1){
+    digitalWrite(D0, 0);
     digitalWrite(D1, 0);
     digitalWrite(D2, 0);
     digitalWrite(D3, 0);}
-  else if (req.indexOf("D4_on") != -1)
-    {digitalWrite(D4, 1);
+       if (req.indexOf("D4_on") != -1){
+    digitalWrite(D4, 1);
     delay(300);
     digitalWrite(D4, 0);}
-  else {
+       else{
     Serial.println("invalid request");
     client.stop();
   }
   Serial.println("Client disonnected");
   }
-
